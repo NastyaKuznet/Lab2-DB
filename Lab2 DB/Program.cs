@@ -1,10 +1,19 @@
-﻿namespace Lab2_DB
+﻿using System.Reflection.PortableExecutable;
+
+namespace Lab2_DB
 {
-    internal class Program
+    class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello, World!");
+            Book[] books = LoadData.ReadBooks("books.csv");
+            Reader[] readers = LoadData.ReadReaders("readers.csv", "readerBooks.csv");
+            //foreach(Reader reader in readers)
+            //{
+            //    Console.WriteLine(reader.ToString(books[19]));
+            //    Console.WriteLine();
+            //}
+            Console.WriteLine(Reader.ToString(readers, books[12]));
         }
     }
 }
