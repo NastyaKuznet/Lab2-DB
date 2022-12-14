@@ -13,6 +13,11 @@ namespace Lab2_DB
             //    Console.WriteLine(reader.ToString(books[19]));
             //    Console.WriteLine();
             //}
+            //foreach(Book book in books)
+            //{
+            //    Console.WriteLine(book.ToString(books[19]));
+            //    Console.WriteLine();
+            //}
             Console.WriteLine(Reader.ToString(readers, books[12]));
         }
     }
