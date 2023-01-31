@@ -18,8 +18,8 @@ namespace Lab2_DB
             for (int i = 0; i < books.Length; i++)
             {
                 string[] line = lines[i].Split(';');
-                CheckInputData.IsRightCountColumns(line, 6, nameFile);
-                CheckInputData.IsRightBook(line);
+                CheckInputData.InputErrorRightCountColumns(line, 6, nameFile);
+                CheckInputData.CheckInputBook(line);
                 books[i] = new Book(int.Parse(line[0]), line[1], line[2], int.Parse(line[3]), int.Parse(line[4]), int.Parse(line[5]));
             }
             return books;
@@ -34,16 +34,16 @@ namespace Lab2_DB
             for (int i = 0; i < readers.Length; i++)
             {
                 string[] line = linesReaders[i].Split(';');
-                CheckInputData.IsRightCountColumns(line, 3, nameFileReaders);
-                CheckInputData.IsRightReader(line);
+                CheckInputData.InputErrorRightCountColumns(line, 3, nameFileReaders);
+                CheckInputData.CheckInputReader(line);
                 Dictionary<int, DateTime> dateTake = new Dictionary<int, DateTime>();
                 Dictionary<int, DateTime> dateReturn = new Dictionary<int, DateTime>();
                 for (int j = 0; j < linesReadersBooks.Length; j++)
                 {
 
                     string[] lineDates = linesReadersBooks[j].Split(';');
-                    CheckInputData.IsRightCountColumns(lineDates, 4, nameFileReadersBooks);
-                    CheckInputData.IsRightRiderBooks(lineDates);
+                    CheckInputData.InputErrorRightCountColumns(lineDates, 4, nameFileReadersBooks);
+                    CheckInputData.CheckInputRiderBooks(lineDates);
                     if (line[0] == lineDates[0])
                     {
                         int id = int.Parse(lineDates[1]);
